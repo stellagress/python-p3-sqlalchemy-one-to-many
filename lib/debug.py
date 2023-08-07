@@ -11,3 +11,7 @@ if __name__ == '__main__':
     session = Session()
 
     import ipdb; ipdb.set_trace()
+
+
+    review = session.query(Review).first()
+    session.query(Game).filter_by(id=review.game_id).first()
